@@ -131,7 +131,7 @@ ${link}.setText(${word_selection}${});
 ${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="false" context="swt-statements" deleted="false" description="new List" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.list" name="List">${type:newType(org.eclipse.swt.widgets.List)} ${list:newName(org.eclipse.swt.widgets.List)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link('SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.MULTI | SWT.V_SCROLL', SWT.MULTI, 'SWT.SINGLE | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.SINGLE | SWT.V_SCROLL', SWT.SINGLE)});
 ${list}.setLayoutData(new ${gridDataType:newType(org.eclipse.swt.layout.GridData)}(SWT.${horizontal:link(FILL, BEGINNING, CENTER, END)}, SWT.${vertical:link(FILL, TOP, CENTER, BOTTOM)}, ${hex:link(true, false)}, ${vex:link(true, false)}));
 ${list}.setItems(${word_selection}${});
-${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true" context="java" deleted="false" description="log4j" enabled="true" name="log">private static final Logger logger = Logger.getLogger(${enclosing_type}.class);</template><template autoinsert="true" context="java" deleted="false" description="commons logging" enabled="true" name="logc">private static final Log logger = LogFactory.getLog(${enclosing_type}.class);</template><template autoinsert="false" context="java-members" deleted="false" description="main method" enabled="true" id="org.eclipse.jdt.ui.templates.main" name="main">public static void main(String[] args) {
+${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true" context="java" deleted="false" description="log4j" enabled="true" name="log">protected Logger log = Logger.getLogger(${enclosing_type}.class);</template><template autoinsert="false" context="java-members" deleted="false" description="main method" enabled="true" id="org.eclipse.jdt.ui.templates.main" name="main">public static void main(String[] args) {
 	${cursor}
 }</template><template autoinsert="false" context="swt-statements" deleted="false" description="new top level Shell with event loop" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.mainloop" name="mainloop">${displayType:newType(org.eclipse.swt.widgets.Display)} ${display:newName(org.eclipse.swt.widgets.Display)} = new ${displayType}();
 ${shellType:newType(org.eclipse.swt.widgets.Shell)} ${shell:newName(org.eclipse.swt.widgets.Shell)} = new ${shellType}(${display});
@@ -174,10 +174,10 @@ ${imp:import(org.eclipse.swt.SWT)}${cursor}
 ${scrolled}.setContent(${content});
 Point ${contentSize:newName(org.eclipse.swt.graphics.Point)} = ${content}.computeSize(SWT.DEFAULT, SWT.DEFAULT);
 ${content}.setSize(${contentSize});
-${scrolled}.setMinSize(${contentSize});</template><template autoinsert="true" context="java" deleted="false" description="junit 4 seupt" enabled="true" name="setup">  @Before&#13;
-  public void setUp() throws Exception {&#13;
-    ${cursor}&#13;
-  }</template><template autoinsert="false" context="swt-statements" deleted="false" description="new Shell" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.shell" name="Shell">${shellType:newType(org.eclipse.swt.widgets.Shell)} ${shell:newName(org.eclipse.swt.widgets.Shell)} = new ${shellType}(${parent:var(org.eclipse.swt.widgets.Shell)}, ${style:link('SWT.DIALOG_TRIM | SWT.PRIMARY_MODAL', 'SWT.DIALOG_TRIM | SWT.MODELESS', 'SWT.SHELL_TRIM | SWT.MODELESS', 'SWT.SHELL_TRIM | SWT.PRIMARY_MODAL')});
+${scrolled}.setMinSize(${contentSize});</template><template autoinsert="true" context="java" deleted="false" description="Junit 4 setup" enabled="true" name="setup">@Before&#13;
+public void setUp(){&#13;
+	${cursor}&#13;
+}</template><template autoinsert="false" context="swt-statements" deleted="false" description="new Shell" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.shell" name="Shell">${shellType:newType(org.eclipse.swt.widgets.Shell)} ${shell:newName(org.eclipse.swt.widgets.Shell)} = new ${shellType}(${parent:var(org.eclipse.swt.widgets.Shell)}, ${style:link('SWT.DIALOG_TRIM | SWT.PRIMARY_MODAL', 'SWT.DIALOG_TRIM | SWT.MODELESS', 'SWT.SHELL_TRIM | SWT.MODELESS', 'SWT.SHELL_TRIM | SWT.PRIMARY_MODAL')});
 ${shell}.setLayout(new ${layoutType:newType(org.eclipse.swt.layout.GridLayout)}(${numberColumns:link(1, 2, 3, 4, 5)}, ${equalColumns:link(false, true)}));
 
 ${imp:import(org.eclipse.swt.SWT)}${cursor}
@@ -224,11 +224,11 @@ for (int ${index} = 0; ${index} &lt; ${table}.getColumnCount(); ${index}++) {
 ${column}.setText(${word_selection}${});
 ${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="false" context="swt-statements" deleted="false" description="new TableItem for a Table" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.tableitem" name="TableItem">${type:newType(org.eclipse.swt.widgets.TableItem)} ${item:newName(org.eclipse.swt.widgets.TableItem)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Table)}, SWT.NONE);
 ${item}.setText(${count:link(0, 1, 2, 3, 4, 5)}, ${word_selection}${});
-${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true" context="java" deleted="false" description="junit 4 teardoiwn" enabled="true" name="teardown">  @After&#13;
-  public void tearDown() throws Exception {&#13;
-    ${cursor}&#13;
-  }</template><template autoinsert="false" context="java-members" deleted="false" description="test method" enabled="true" id="org.eclipse.jdt.ui.templates.test" name="test">@${testType:newType(org.junit.Test)}
-public void ${testname}() throws Exception {
+${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true" context="java" deleted="false" description="Junit 4 teardown" enabled="true" name="teardown">@After&#13;
+public void teardown(){&#13;
+	${cursor}&#13;
+}</template><template autoinsert="false" context="java-members" deleted="false" description="test method (JUnit 4)" enabled="true" name="test">@${testType:newType(org.junit.Test)}
+public void test${name}() throws Exception {
 	${staticImport:importStatic('org.junit.Assert.*')}${cursor} 
 }</template><template autoinsert="false" context="java-members" deleted="false" description="test method (JUnit 4)" enabled="true" id="org.eclipse.jdt.ui.templates.test_junit4" name="Test">@${testType:newType(org.junit.Test)}
 public void ${testname}() throws Exception {
