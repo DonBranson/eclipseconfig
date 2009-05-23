@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description="log4j" enabled="true" name="log">private static final Logger logger = Logger.getLogger(${enclosing_type}.class);</template><template autoinsert="true" context="java" deleted="false" description="commons logging" enabled="true" name="logc">private static final Log logger = LogFactory.getLog(${enclosing_type}.class);</template><template autoinsert="false" context="java-members" deleted="false" description="test method (JUnit 4)" enabled="true" name="test">@${testType:newType(org.junit.Test)}
+public void test${name}() throws Exception {
+	${staticImport:importStatic('org.junit.Assert.*')}${cursor} 
+}</template></templates>
